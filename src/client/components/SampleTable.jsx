@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { Modal } from "./Modal"
-import { getTableData } from "../api"
+import { getTableData } from "../services/api"
 import Dropdown from "./Dropdown"
 
 export default function SampleTable() {

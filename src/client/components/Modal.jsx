@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getTableData, tooglePurchase } from "../api"
+import { getTableData, tooglePurchase } from "../services/api"
 
 export const Modal = ({ id, modalRef, updateTable }) => {
 

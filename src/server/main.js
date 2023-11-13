@@ -5,6 +5,7 @@ ViteExpress.config({ mode: "production" })
 
 
 const { default: axios } = require("axios");
+const { baseApi } = require("./config");
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
@@ -23,7 +24,7 @@ const get = (async (url, req, res) => {
     },
   })
   const result = await response.data;
-  res.json(result)
+  return res.json(result)
 });
 
 const post = (async (url, req, res) => {
@@ -37,15 +38,15 @@ const post = (async (url, req, res) => {
       },
     })
   const result = await response.data;
-  res.json(result)
+  return res.json(result)
 });
 
 app.get("/get/test/records", (req, res, next) => {
-  get("http://209.126.0.154" + "/get/test/records" + (req.query.query ? req.query.query : ""), req, res)
+  get(baseApi + "/get/test/records" + (req.query.query ? req.query.query : ""), req, res)
 });
 
 app.post("/test/update", (req, res, next) => {
-  post("http://209.126.0.154" + "/test/update/" + req.body.isPurchase, req, res)
+  post(baseApi + "/test/update/" + req.body.isPurchase, req, res)
 });
 
 ViteExpress.listen(app, 3000, () =>

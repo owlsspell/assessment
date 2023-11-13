@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import ModalFilter from "./ModalFilter"
-import { getTableData } from "../api";
+import { getTableData } from "../services/api";
 
 export default function Dropdown({ setData, setPages }) {
     const [filterOptions, setFilterOptions] = useState({

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { token } from "./config"
+import { token } from "../config"
 
 export const getTableData = (query) => {
     return axios.get('get/test/records', {
